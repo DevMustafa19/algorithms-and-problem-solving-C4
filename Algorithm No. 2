@@ -1,0 +1,20 @@
+Algorithm No. 2
+
+using namespace std;
+
+string ReadName()
+{
+    string Name;
+    cout << "Please enter your name : " << endl;
+    getline(cin, Name);
+    return Name;
+}
+static void PrintName(string Name)
+{
+    cout << "your name is : " << Name << endl;
+}
+int main()
+{
+    PrintName(ReadName());
+    return 0;
+}
