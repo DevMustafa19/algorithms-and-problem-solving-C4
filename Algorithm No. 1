@@ -1,0 +1,15 @@
+#1
+
+using namespace std;
+
+static void PrintName(string Name)
+{
+    cout << "your name is : " << Name << endl;
+}
+int main()
+{
+    
+    PrintName("Dev.Mostafa");
+
+    return 0;
+}
