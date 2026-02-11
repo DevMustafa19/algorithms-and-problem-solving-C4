@@ -1,0 +1,44 @@
+Algorithms No.4
+
+using namespace std;
+
+struct strDriverDetails
+{
+	int Age;
+	bool HasDriverLicense;
+};
+
+static strDriverDetails ReadDriverDetails()
+{
+	strDriverDetails Driver;
+
+	cout << "Please enter your age : ";
+	cin >> Driver.Age;
+
+	cout << "Do you have a driver’s license? (1 for Yes, 0 for No) ";
+	cin >> Driver.HasDriverLicense;
+	return Driver;
+}
+
+static bool IsAccepted(strDriverDetails Driver)
+{
+	return (Driver.Age >= 21 && Driver.HasDriverLicense);
+}
+
+static void PrintDriverDetails(strDriverDetails Driver)
+{
+	if (IsAccepted(Driver))
+	{
+		cout << "\n Hired" << endl;
+	}
+	else
+	{
+		cout << "\n Rejected" << endl;
+	}
+}
+
+int main()
+{
+	PrintDriverDetails(ReadDriverDetails());
+	return 0;
+}
