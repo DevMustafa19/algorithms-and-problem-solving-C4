@@ -1,0 +1,54 @@
+algorithms no.5
+
+struct strDriverDetails
+{
+	int Age;
+	bool HasDriverLicense;
+	bool HasRecommendation;
+};
+
+static strDriverDetails ReadDriverDetails()
+{
+	strDriverDetails Driver;
+
+	cout << "Please enter your age : ";
+	cin >> Driver.Age;
+
+	cout << "Do you have a driver’s license? (1 for Yes, 0 for No) ";
+	cin >> Driver.HasDriverLicense;
+
+	cout << "Do you have a recommendation? (1 for Yes, 0 for No) ";
+	cin >> Driver.HasRecommendation;
+
+	return Driver;
+}
+
+static bool IsAccepted(strDriverDetails Driver)
+{
+	if (Driver.HasRecommendation)
+	{
+		return true;
+	}
+	else
+	{
+		return ((Driver.Age >= 21 && Driver.HasDriverLicense) || (Driver.HasRecommendation));
+	}
+}
+
+static void PrintDriverDetails(strDriverDetails Driver)
+{
+	if (IsAccepted(Driver))
+	{
+		cout << "\n Hired" << endl;
+	}
+	else
+	{
+		cout << "\n Rejected" << endl;
+	}
+}
+
+int main()
+{
+	PrintDriverDetails(ReadDriverDetails());
+	return 0;
+}
