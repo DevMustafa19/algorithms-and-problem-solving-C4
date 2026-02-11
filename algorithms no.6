@@ -1,0 +1,36 @@
+algorithms no.6
+
+struct strPersonDetails
+{
+	string FirstName;
+	string LastName;
+};
+
+static strPersonDetails ReadPersonDetails()
+{
+	strPersonDetails Details;
+	cout << "Please enter your first name : ";
+	cin >> Details.FirstName;
+
+	cout << "Please enter your last name  : ";
+	cin >> Details.LastName;
+	return Details;
+}
+
+static string GetPersonDetails(strPersonDetails Details)
+{
+	string FullName;
+	FullName = Details.FirstName + " " + Details.LastName;
+	return	FullName;
+}
+
+static void PrintPersonDetails(string FullName)
+{
+	cout << "Your full name is : " << FullName << endl;
+}
+
+int main()
+{
+	PrintPersonDetails(GetPersonDetails(ReadPersonDetails()));
+	return 0;
+}
