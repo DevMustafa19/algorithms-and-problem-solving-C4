@@ -1,0 +1,26 @@
+algorithms no.7
+
+int ReadNum()
+{
+	int Num;
+	cout << "Pls enter a number : ";
+	cin >> Num;
+	return Num;
+}
+
+static float CalculatingHalfNum(int Num)
+{
+	return (float)Num / 2;
+}
+
+static void PrintResult(int Num)
+{
+	string Result = "Half of " + to_string(Num) + " is " + to_string(CalculatingHalfNum(Num));
+	cout << endl << Result << endl;
+}
+
+int main()
+{
+	PrintResult(ReadNum());
+	return 0;
+}
