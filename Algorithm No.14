@@ -1,0 +1,34 @@
+Algorithm No.14
+
+static void Read2Num(int& Num1, int& Num2)
+{
+	cout << "Pls enter number 1 : ";
+	cin >> Num1;
+	cout << "Pls enter number 2 : ";
+	cin >> Num2;
+}
+
+static void Swap(int& A, int& B)
+{
+	int Temp;
+	Temp = A;
+	A = B;
+	B = Temp;
+}
+
+static void Print2Num(int Num1, int Num2)
+{
+	cout << "\nNumber A = " << Num1 << endl;
+	cout << "Number B = " << Num2 << endl;
+}
+
+int main()
+{
+	int Num1, Num2;
+	Read2Num(Num1, Num2);
+	Print2Num(Num1, Num2);
+	Swap(Num1, Num2);
+	Print2Num(Num1, Num2);
+	
+	return 0;
+}
