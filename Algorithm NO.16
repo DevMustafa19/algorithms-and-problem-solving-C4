@@ -1,0 +1,32 @@
+Algorithm NO.16
+
+/*Write a program to calculate rectangle area through diagonal and sid area of
+rectangl and print it on the screen.*/
+
+static void ReadNumbers(float& Side, float& Diagonal)
+{
+	cout << "Please enter the value of the rectangle's side : ";
+	cin >> Side;
+
+	cout << "Please enter the value of the rectangle's Diagonal : ";
+	cin >> Diagonal;
+}
+static float Calculating(float Side, float Diagonal)
+{
+	float Area = Side * sqrt(pow(Diagonal, 2) - pow(Side, 2));
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nRectangle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	float Side, Diagonal;
+	ReadNumbers(Side, Diagonal);
+	PrintResult(Calculating(Side, Diagonal));
+	
+	return 0;
+}
