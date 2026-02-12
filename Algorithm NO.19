@@ -1,0 +1,32 @@
+Algorithm NO.19
+
+
+/*Write a program to calculate circle area though diameter,and print it on
+the screen.*/
+
+float ReadDiameter()
+{
+	float Diameter;
+
+	cout << "Please enter the diameter of the circle : ";
+	cin >> Diameter;
+
+	return Diameter;
+}
+static float CalculatingCircleArea(float Diameter)
+{
+	const float PI = 3.141592;
+	float Area = (PI * pow(Diameter, 2)) / 4;
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	PrintResult(CalculatingCircleArea(ReadDiameter()));
+	return 0;
+}
