@@ -1,0 +1,28 @@
+Algorithm NO.18
+
+//Write a program to calculate circle area thin print it on the screen.
+
+float ReadNumbers()
+{
+	float Radius;
+	cout << "Please enter the value of the circle radius : ";
+	cin >> Radius;
+	return Radius;
+}
+static float CalculatingCircleArea(float Radius)
+{
+	const float PI = 3.141592;
+	float Area = PI * pow(Radius, 2);
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	PrintResult(CalculatingCircleArea(ReadNumbers()));
+	return 0;
+}
