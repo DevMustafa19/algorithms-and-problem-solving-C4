@@ -1,0 +1,31 @@
+algorithm no.12
+
+static void Read2Num(int& Num1, int& Num2)
+{
+	cout << "Pls enter number 1 : ";
+	cin >> Num1;
+	cout << "Pls enter number 2 : ";
+	cin >> Num2;
+}
+
+static int MaxOf2Num(int Num1, int Num2)
+{
+	if (Num1 > Num2)
+		return Num1;
+	else
+		return Num2;
+}
+
+static void PrintResult(int Max)
+{
+	cout << "Max number is ( " << Max << " ).\n";
+}
+
+int main()
+{
+
+	int Num1, Num2;
+	Read2Num(Num1, Num2);
+	PrintResult(MaxOf2Num(Num1, Num2));
+	return 0;
+}
