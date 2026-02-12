@@ -1,0 +1,31 @@
+Algorithm NO.17
+
+//Write a program to calculate triangle area thin print it on screen.
+
+static void ReadNumbers(float& Base, float& Height)
+{
+	cout << "Please enter the base value of the triangle : ";
+	cin >> Base;
+
+	cout << "Please enter the height value of the triangle : ";
+	cin >> Height;
+}
+static float CalculatingTriangleArea(float Base, float  Height)
+{
+	float Area = (Base / 2) * Height;
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nRectangle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	float Base, Height;
+	ReadNumbers(Base, Height);
+	PrintResult(CalculatingTriangleArea(Base, Height));
+	
+	return 0;
+}
