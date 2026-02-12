@@ -1,0 +1,32 @@
+Algorithm NO.20
+
+*Write a program to calculate circle area inscribed in a square ,and print
+it on the screen.*/
+
+float ReadSquareSide()
+{
+	float SquareSide;
+
+	cout << "Please enter the square side of the square : ";
+
+	cin >> SquareSide;
+
+	return SquareSide;
+}
+static float CalculatingCircleAreaInscribedInSquare(float SquareSide)
+{
+	const float PI = 3.141592;
+	float Area = (PI * pow(SquareSide, 2)) / 4;
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	PrintResult(CalculatingCircleAreaInscribedInSquare(ReadSquareSide()));
+	return 0;
+}
