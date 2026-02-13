@@ -1,0 +1,32 @@
+Algorithm NO.21
+
+/*Write a program to calculate circle area a long the Circumference ,and print
+it on the screen.*/
+
+float ReadCircumference()
+{
+	float Circumference;
+
+	cout << "Please enter the value of the circle's circumference : ";
+	cin >> Circumference;
+
+	return Circumference;
+}
+
+static float CalculatingCircleArea(float Circumference)
+{
+	const float PI = 3.141592;
+	float Area = pow(Circumference, 2) / (4 * PI);
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	PrintResult(CalculatingCircleArea(ReadCircumference()));
+	return 0;
+}
