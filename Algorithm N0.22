@@ -1,0 +1,33 @@
+Algorithm N0.22
+
+/*Write a program to calculate circle area inscribed ,and print
+it on the screen.*/
+
+void ReadSideBase(float& Side, float& Base)
+{
+	cout << "Please enter the value of the triangle's side : ";
+	cin >> Side;
+
+	cout << "Please enter the value of the triangle's base : ";
+	cin >> Base;
+}
+
+static float CalculatingCircleArea(float Side, float Base)
+{
+	const float PI = 3.141592;
+	float Area = (PI * pow(Base, 2)) / 4 * ((2 * Side - Base) / (2 * Side + Base));
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	float Side, Base;
+	ReadSideBase(Side, Base);
+	PrintResult(CalculatingCircleArea(Side, Base));
+	return 0;
+}
