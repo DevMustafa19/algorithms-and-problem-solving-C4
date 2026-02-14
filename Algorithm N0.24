@@ -1,39 +1,28 @@
 Algorithm N0.24
 
-/*Write a program to calculate circle area described around
-an arbitrary triangle,then print it on the screen.*/
-
-static void ReadSideBase(float& ChordA, float& ChordB, float& ChordC)
+int ReadAge()
 {
-	cout << "Please enter the value of the triangle's Chord a : ";
-	cin >> ChordA;
-
-	cout << "Please enter the value of the triangle's Chord b : ";
-	cin >> ChordB;
-
-	cout << "Please enter the value of the triangle's Chord c : ";
-	cin >> ChordC;
-
+	int Age;
+	cout << "Please enter the age : ";
+	cin >> Age;
+	return Age;
 }
 
-static float CalculatingCircleAreaByTriangle(float ChordA, float ChordB, float ChordC)
+bool ValidateNumberInRange(int Number, int from, int to)
 {
-	const float PI = 3.141592;
-	float P = (ChordA + ChordB + ChordC) / 2;
-	float T = (ChordA * ChordB * ChordC) / (4 * sqrt(P * (P - ChordA) * (P - ChordC) * (P - ChordB)));
-	float Area = PI * pow(T, 2);
-	return Area;
+	return (Number >= from && Number <= to);
 }
 
-static void PrintResult(float Area)
+static void PrintResult(int Age)
 {
-	cout << "\nCircle Area = " << Area << " cm.\n";
+	if (ValidateNumberInRange(Age, 18, 45))
+		cout << Age << " is a valid age \n";
+	else
+		cout << Age << " is an invalid age \n";
 }
 
 int main()
 {
-	float ChordA, ChordB, ChordC;
-	ReadSideBase(ChordA, ChordB, ChordC);
-	PrintResult(CalculatingCircleAreaByTriangle(ChordA, ChordB, ChordC));
+	PrintResult(ReadAge());
 	return 0;
 }
