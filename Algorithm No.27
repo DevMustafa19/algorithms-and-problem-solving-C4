@@ -1,0 +1,55 @@
+Algorithm No.27
+
+//Print numbers from N to 1.
+
+int ReadNum()
+{
+	int Num;
+	cout << "Plz enter a number : ";
+	cin >> Num;
+	return Num;
+}
+
+void UsingWhile(int N)
+{
+	cout << "Using while\n";
+
+	int Counter = N + 1;
+	while (Counter > 1)
+	{
+		Counter--;
+		cout << Counter << endl;
+	}
+}
+
+void UsingDoWhile(int N)
+{
+	cout << "Using do while\n";
+
+	int Counter = N + 1;
+	do
+	{
+		Counter--;
+		cout << Counter << endl;
+	} while (Counter > 1);
+}
+
+void UsingForLoop(int N)
+{
+	cout << "Using do for loop\n";
+
+	for (int Counter = N; Counter >= 1; Counter--)
+	{
+		cout << Counter << endl;
+	}
+}
+
+int main()
+{
+	int N = ReadNum();
+
+	UsingWhile(N);
+	UsingDoWhile(N);
+	UsingForLoop(N);
+	return 0;
+}
