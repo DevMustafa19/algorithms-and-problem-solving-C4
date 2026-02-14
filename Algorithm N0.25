@@ -1,0 +1,36 @@
+Algorithm N0.25
+
+int ReadAge()
+{
+	int Age;
+	cout << "Please enter the age between 18 - 45 : ";
+	cin >> Age;
+	return Age;
+}
+
+bool ValidateNumberInRange(int Num, int From, int To)
+{
+	return (Num >= From && Num <= To);
+}
+
+int ReadUntilAgeBetween(int From, int To)
+{
+	int Age = 0;
+
+	do
+	{ 
+		Age = ReadAge();
+	} while (!ValidateNumberInRange(Age,From,To));
+	return Age;
+}
+
+void PrintResult(int Age)
+{
+	cout << "Your Age Is " << Age << endl;
+}
+
+int main()
+{
+	PrintResult(ReadUntilAgeBetween(18, 45));
+	return 0;
+}
