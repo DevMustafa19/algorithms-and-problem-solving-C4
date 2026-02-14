@@ -1,0 +1,55 @@
+Algorithm N0.26
+
+//Print numbers from 1 to N.
+
+int ReadNum()
+{
+	int Num;
+	cout << "Plz enter a number : ";
+	cin >> Num;
+	return Num;
+}
+
+void UsingWhile(int N)
+{
+	cout << "Using while\n";
+
+	int Counter = 0;
+	while (Counter < N)
+	{
+		Counter++;
+		cout << Counter << endl;
+	}
+}
+
+void UsingDoWhile(int N)
+{
+	cout << "Using do while\n";
+
+	int Counter = 0;
+	do
+	{
+		Counter++;
+		cout << Counter << endl;
+	} while (Counter < N);
+}
+
+void UsingForLoop(int N)
+{
+	cout << "Using do for loop\n";
+
+	for (int Counter=1; Counter<=N; Counter++)
+	{
+		cout << Counter << endl;
+	}
+}
+
+int main()
+{
+	int N = ReadNum();
+
+	UsingWhile(N);
+	UsingDoWhile(N);
+	UsingForLoop(N);
+	return 0;
+}
