@@ -1,0 +1,39 @@
+Algorithm N0.24
+
+/*Write a program to calculate circle area described around
+an arbitrary triangle,then print it on the screen.*/
+
+static void ReadSideBase(float& ChordA, float& ChordB, float& ChordC)
+{
+	cout << "Please enter the value of the triangle's Chord a : ";
+	cin >> ChordA;
+
+	cout << "Please enter the value of the triangle's Chord b : ";
+	cin >> ChordB;
+
+	cout << "Please enter the value of the triangle's Chord c : ";
+	cin >> ChordC;
+
+}
+
+static float CalculatingCircleAreaByTriangle(float ChordA, float ChordB, float ChordC)
+{
+	const float PI = 3.141592;
+	float P = (ChordA + ChordB + ChordC) / 2;
+	float T = (ChordA * ChordB * ChordC) / (4 * sqrt(P * (P - ChordA) * (P - ChordC) * (P - ChordB)));
+	float Area = PI * pow(T, 2);
+	return Area;
+}
+
+static void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << " cm.\n";
+}
+
+int main()
+{
+	float ChordA, ChordB, ChordC;
+	ReadSideBase(ChordA, ChordB, ChordC);
+	PrintResult(CalculatingCircleAreaByTriangle(ChordA, ChordB, ChordC));
+	return 0;
+}
