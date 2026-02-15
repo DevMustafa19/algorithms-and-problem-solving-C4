@@ -1,0 +1,29 @@
+Algorithm No.30
+
+int ReadPositiveNumber(string Message)
+{
+    int Num;
+
+    do
+    {
+        cout << Message << endl;
+        cin >> Num;
+    } while (Num < 0);
+    return Num;
+}
+
+int Factorial(int N)
+{
+    int Fac = 1;
+    for (int Counter = N; Counter >= 1; Counter--)
+    {
+        Fac *= Counter;
+    }
+    return Fac;
+}
+
+int main()
+{
+    cout << Factorial(ReadPositiveNumber("Please enter a positive number! : "));
+    return 0;  
+}
