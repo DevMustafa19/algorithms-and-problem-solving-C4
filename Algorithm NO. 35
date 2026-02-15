@@ -1,0 +1,47 @@
+Algorithm NO. 35
+
+struct strPiggyBankContent
+{
+    unsigned int Pennies, Nickels, Dimes, Quarters, Dollars;
+};
+
+strPiggyBankContent ReadPiggyBankContent()
+{
+    strPiggyBankContent PiggyBankContent;
+
+    cout << "Pleae enter the pennies : ";
+    cin >> PiggyBankContent.Pennies;
+
+    cout << "Pleae enter the nickels : ";
+    cin >> PiggyBankContent.Nickels;
+
+    cout << "Pleae enter the dimes : ";
+    cin >> PiggyBankContent.Dimes;
+
+    cout << "Pleae enter the quarters : ";
+    cin >> PiggyBankContent.Quarters;
+
+    cout << "Pleae enter the dollars : ";
+    cin >> PiggyBankContent.Dollars;
+
+    return PiggyBankContent;
+}
+
+int CalculatingPiggyBankContent(strPiggyBankContent PiggyBankContent)
+{
+    int TotalPennies = 
+          PiggyBankContent.Pennies * 1
+        + PiggyBankContent.Nickels * 5
+        + PiggyBankContent.Dimes * 10
+        + PiggyBankContent.Quarters * 25
+        + PiggyBankContent.Dollars * 100;
+    return TotalPennies;
+}
+
+int main()
+{
+    int TotalPennies = CalculatingPiggyBankContent(ReadPiggyBankContent());
+    cout << "\nTotal pennies = " << TotalPennies << " $\n";
+    cout << "Total Dollars = " << (float)TotalPennies / 100 << " $\n";
+    return 0;  
+}
