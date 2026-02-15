@@ -1,0 +1,26 @@
+Algorithm NO.39
+
+float ReadPositiveNum(string Message)
+{
+    float Num = 0;
+    do 
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num <= 0);
+    return Num;
+}
+
+float CalculateRemainder(float TotalBaill, float CashPaid)
+{
+    return CashPaid - TotalBaill;
+}
+ 
+int main()
+{
+    float TotalBaill = ReadPositiveNum("Pls enter the total baill : ");
+    float CashPaid = ReadPositiveNum("Pls enter the cash paid : ");
+    cout << "_________________________________\n";
+    cout << "Remainder = " << CalculateRemainder(TotalBaill, CashPaid) << "\n\n\n\n\n";
+    return 0;  
+}
