@@ -1,0 +1,42 @@
+Algorithm NO. 34
+
+using namespace std;  
+
+float ReadTotalSales()
+{
+    float TotalSales;
+
+    cout << "Pls enter a total sales : ";
+    cin >> TotalSales;
+    cout << "_________________________________________________";
+    return TotalSales;
+}
+
+float GetCommissionPercentage(float TotalSales)
+{
+    if (TotalSales >= 1000000)
+        return 0.01;
+    else if (TotalSales >= 500000)
+        return 0.02;
+    else if (TotalSales >= 100000)
+        return 0.03;
+    else if (TotalSales >= 50000)
+        return 0.05;
+    else 
+        return 0.00;
+   
+}
+
+float CalculatCommissionPercentage(float TotalSales)
+{
+    return GetCommissionPercentage(TotalSales) * TotalSales;
+}
+
+int main()
+{
+    float TotalSales = ReadTotalSales();
+
+    cout << "\nCommission percentage : " << GetCommissionPercentage(TotalSales) * 100 << "%" << endl;
+    cout << "Total commission : " << CalculatCommissionPercentage(TotalSales) << endl;
+    return 0;  
+}
