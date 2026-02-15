@@ -1,0 +1,90 @@
+Algorithm No.28
+
+using namespace std;  
+
+enum enOddOrEven { Odd = 1, Even = 2 };
+
+int ReadNumber()
+{
+    int Num;
+
+    cout << "Pls enter a number : ";
+    cin >> Num;
+
+    return Num;
+}
+
+enOddOrEven CheckOddOrEven(int Num)
+{
+    if (Num % 2 != 0)
+    {
+        return enOddOrEven::Odd;
+    }
+    else 
+    {
+        return enOddOrEven::Even;
+    }
+}
+
+int SumUsingWhile(int N)
+{
+    int Sum = 0;
+    int Counter = 0;
+
+    cout << "Sum odd numbers using while\n";
+
+    while (Counter < N)
+    {
+        Counter++;
+
+       if (CheckOddOrEven(Counter)==enOddOrEven::Odd)
+       {
+           Sum += Counter;
+       }
+    }
+    return Sum;
+}
+
+int SumUsingDoWhile(int N)
+{
+    int Sum = 0;
+    int Counter = 0;
+
+    cout << "Sum odd numbers using do while\n";
+
+    do
+    {
+        Counter++;
+
+        if (CheckOddOrEven(Counter) == enOddOrEven::Odd)
+        {
+            Sum += Counter;
+        }
+    } while (Counter < N);
+    return Sum;
+}
+
+int SumUsingFor(int N)
+{
+    int Sum = 0;
+
+    cout << "Sum odd numbers using for loop\n";
+
+   for (int Counter = 1; Counter <= N; Counter++)
+   {
+       if (CheckOddOrEven(Counter) == enOddOrEven::Odd)
+       {
+           Sum += Counter;
+       }
+   }
+   return Sum;
+}
+
+int main()
+{
+    int N = ReadNumber();
+    cout << SumUsingWhile(N) << endl;
+    cout << SumUsingDoWhile(N) << endl;
+    cout << SumUsingFor(N) << endl;
+    return 0;  
+}
