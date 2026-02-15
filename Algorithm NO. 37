@@ -1,0 +1,63 @@
+Algorithm NO. 37
+
+float ReadNum(string Message)
+{
+    float Num = 0;
+    cout << Message;
+    cin >> Num;
+
+    return Num;
+}
+
+float SumNumbers()
+{
+    int Num = 0, Sum = 0, Counter = 1;
+
+    do
+    {
+        Num = ReadNum("Pls enter number " + to_string(Counter) + " : ");
+
+        if (Num == -99)
+        {
+            break;
+        }
+        Sum += Num;
+        Counter++;
+    } while (Num != -99);
+    return Sum;
+}
+
+int main()
+{
+    cout << SumNumbers() << endl;
+    return 0;  
+}
+______________________________________________________________________________________
+float ReadNum(string Message)
+{
+    float Num = 0;
+    cout << Message;
+    cin >> Num;
+
+    return Num;
+}
+
+float SumNumbers()
+{
+    int Num = 0, Sum = 0, Counter = 1;
+    
+    Num = ReadNum("Pls enter number " + to_string(Counter) + " : ");
+    while (Num != -99)
+    {
+        Sum += Num;
+        Counter++;
+        Num = ReadNum("Pls enter number " + to_string(Counter) + " : ");
+    }
+    return Sum;
+}
+
+int main()
+{
+    cout << SumNumbers() << endl;
+    return 0;  
+}
