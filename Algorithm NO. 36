@@ -1,0 +1,47 @@
+Algorithm NO. 36
+
+enum enOperationType { Add = '+', Subtract = '-', Multiply = '*', Divide = '/' };
+
+float ReadMessage(string Message)
+{
+    float Number;
+
+    cout << Message;
+    cin >> Number;
+
+    return Number;
+}
+
+enOperationType ReadOpType()
+{
+     char OpType;
+     cout << "Pls enter the Operation Type ( +, - , * , / ) : ";
+     cin >> OpType;
+     return (enOperationType)OpType;
+}
+
+float Calculate(float Number1, float Number2, enOperationType OpType)
+{
+    switch (OpType)
+    {
+    case enOperationType::Add:
+        return Number1 + Number2;
+    case enOperationType::Subtract:
+        return Number1 - Number2;
+    case enOperationType::Multiply:
+        return Number1 * Number2;
+    case enOperationType::Divide:
+        return Number1 / Number2;
+    default:
+        return Number1 + Number2;
+    }
+}
+
+int main()
+{
+    float Number1 = ReadMessage("Pls enter the first number : ");
+    enOperationType OpType = ReadOpType();
+    float Number2 = ReadMessage("Pls enter the second number : ");
+    cout << Calculate(Number1, Number2, OpType);
+    return 0;  
+}
