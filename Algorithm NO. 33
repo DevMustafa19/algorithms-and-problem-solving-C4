@@ -1,0 +1,36 @@
+Algorithm NO. 33
+
+int ReadMark(int From, int To)
+{
+    int Mark;
+
+    do
+    {
+        cout << "Pls enter a mark between " << From << " and " << To << " :";
+        cin >> Mark;
+    } while (Mark <= From || Mark >= To);
+    return Mark;
+}
+char PassOrFail(int Mark)
+{
+    if (Mark >= 90)
+        return 'A';
+    else if (Mark >= 80)
+        return 'B';
+    else if (Mark >= 70)
+        return 'C';
+    else if (Mark >= 60)
+        return 'D';
+    else if (Mark >= 50)
+        return 'E';
+    else
+        return 'F';
+}
+
+int main()
+{
+    int Mark = ReadMark(0, 100);
+
+    cout << " Result = " << PassOrFail(Mark);
+    return 0;  
+}
