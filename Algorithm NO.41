@@ -1,0 +1,40 @@
+Algorithm NO.41
+
+float ReadPositiveNum(string Message)
+{
+    float Num = 0;
+    do
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num <= 0);
+    return Num;
+}
+
+float HoursToDays(float NumOfHours)
+{
+    return (float)NumOfHours / 24;
+}
+
+float HoursToWeeks(float NumOfHours)
+{
+    return (float)NumOfHours / (24 * 7);
+}
+
+float DaysToWeeks(float NumOfDays)
+{
+    return (float)NumOfDays / 7;
+}
+
+int main()
+{
+   float NumOfHours = ReadPositiveNum("Pls enter the number of hours : ");
+   float NumOfDays = HoursToDays(NumOfHours);
+   float NumOfWeeks = HoursToWeeks(NumOfDays);
+ 
+   cout << "Total weeks : " << HoursToWeeks(NumOfHours) << endl;
+   cout << "Total days : "  << NumOfDays << endl;
+   cout << "Total hours : " << NumOfHours << endl;
+
+    return 0;
+}
