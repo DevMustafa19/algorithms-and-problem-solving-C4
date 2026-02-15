@@ -1,0 +1,42 @@
+Algorithm NO. 32
+
+int ReadNumber()
+{
+    int Num;
+
+    cout << "Pls enter a number : ";
+    cin >> Num;
+
+    return Num;
+}
+
+int ReadPower()
+{
+    int Power;
+
+    cout << "Pls enter a power : ";
+    cin >> Power;
+
+    return Power;
+}
+
+int PowerOf1_2_3(int Num, int M)
+{
+    if (M == 0)
+    {
+        return 1;
+    }
+
+    int P = 1;
+    for (int i = 1; i <= M; i++)
+    {
+        P *= Num;
+    }
+    return P;
+}
+
+int main()
+{
+    cout << endl << PowerOf1_2_3(ReadPower(), ReadNumber()) << endl;
+    return 0;  
+}
