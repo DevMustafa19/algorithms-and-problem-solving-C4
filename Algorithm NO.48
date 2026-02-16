@@ -1,0 +1,27 @@
+Algorithm NO.48
+
+
+float ReadPositiveNum(string Message)
+{
+    float Num = 0;
+    do
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num <= 0);
+    return Num;
+}
+
+float CalculatMonthlyInstallment(float TotalMonths, float LoanAmount)
+{
+        return LoanAmount / TotalMonths;
+}
+
+int main()
+{
+    float LoanAmount = ReadPositiveNum("Please enter the loan amount : ");
+    float TotalMonths = ReadPositiveNum("Please enter total months to pay : ");
+
+    cout << "\nMonthly installment : " << CalculatMonthlyInstallment(TotalMonths, LoanAmount) << " OR.\n\n\n\n\n";
+    return 0;
+}
