@@ -1,0 +1,45 @@
+Algorithm NO.49
+
+
+string ReadPinCode()
+{
+    string PinCode;
+
+    cout << "Please enter PIN code : ";
+    cin >> PinCode;
+    
+    return PinCode;
+}
+
+bool LogIn()
+{
+    string PinCode;
+
+    do
+    {
+        PinCode = ReadPinCode();
+
+        if (PinCode == "1927")
+        {
+            return true;
+        }
+        else
+        {
+            cout << "Wrong PIN ! ";
+            system("color 4F");
+        }
+
+    } while (PinCode != "1927");
+  return false;
+}
+
+int main()
+{
+    if (LogIn())
+    {
+        system("color 2F");
+        cout << "Your account balance is " << 8000000 << " OR.\n\n\n\n";
+    }
+    
+    return 0;
+}
