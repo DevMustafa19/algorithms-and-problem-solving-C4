@@ -1,0 +1,50 @@
+Algorithm NO.44
+
+enum enDays { Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7 };
+
+int ReadNumInRange(string Message, int From, int To)
+{
+    int Num = 0;
+    do
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num < From || Num > To);
+    return Num;
+}
+
+enDays ReadDay()
+{
+   return (enDays)ReadNumInRange
+   ("Pls choose a day (Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7) : ",1,7);
+}
+
+string GetDay(enDays Day)
+{
+    switch (Day)
+    {
+    case enDays::Sun:
+        return "Its Sunday.";
+    case enDays::Mon:
+        return "Its Monday.";
+    case enDays::Tue:
+        return "Its Tuesday.";
+    case enDays::Wed:
+        return "Its Wednesday.";
+    case enDays::Thu:
+        return "Its Thursday.";
+    case enDays::Fri:
+        return "Its Friday.";
+    case enDays::Sat:
+        return "Its Saturday.";
+    default:
+        return "Not a valid Day";
+    }
+
+}
+
+int main()
+{
+    cout << GetDay(ReadDay());
+    return 0;
+}
