@@ -1,5 +1,4 @@
 Algorithm NO.45
-
 enum enMonth 
 {
     Jan = 1, Feb = 2, Mar = 3, 
@@ -20,15 +19,15 @@ int ReadNumInRange(string Message, int From, int To)
     return Num;
 }
 
-enMonth ReadDay()
+enMonth ReadMonth()
 {
    return (enMonth)ReadNumInRange
    ("Pls choose a number (1 - 12) : ",1,12);
 }
 
-string GetDay(enMonth Day)
+string GetMonth(enMonth Month)
 {
-    switch (Day)
+    switch (Month)
     {
     case enMonth::Jan:
         return "Its January.";
@@ -62,6 +61,6 @@ string GetDay(enMonth Day)
 
 int main()
 {
-    cout << GetDay(ReadDay());
+    cout << GetMonth(ReadMonth());
     return 0;
 }
