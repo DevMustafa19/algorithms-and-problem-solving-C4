@@ -1,0 +1,50 @@
+Algorithm NO.42
+
+struct strTaskDuration
+{
+    unsigned long long int NumOfDays, NumOfHours, NumOfMinutes, NumOfSeconds;
+};
+
+long long int ReadPositiveNum(string Message)
+{
+    long long int Num = 0;
+    do
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num <= 0);
+    return Num;
+}
+
+strTaskDuration ReadTaskDuration()
+{
+    strTaskDuration TaskDuration;
+
+    TaskDuration.NumOfDays = ReadPositiveNum("Pleae enter the number of days  : ");
+    TaskDuration.NumOfHours = ReadPositiveNum("Please enter the number of Hours : ");
+    TaskDuration.NumOfMinutes = ReadPositiveNum("Please enter the number of Minutes : ");
+    TaskDuration.NumOfSeconds = ReadPositiveNum("Please enter the number of Seconds : ");
+
+    return TaskDuration;
+}
+
+long long int CalculateSeconds(strTaskDuration TaskDuration)
+{
+    long long int TotalSeconds = 0;
+
+    TotalSeconds  = TaskDuration.NumOfDays * 24 * 60 * 60;
+    TotalSeconds += TaskDuration.NumOfHours * 60 * 60;
+    TotalSeconds += TaskDuration.NumOfMinutes * 60;
+    TotalSeconds += TaskDuration.NumOfSeconds;
+   
+    return TotalSeconds;
+}
+
+int main()
+{
+    long long int TotalSeconds = CalculateSeconds(ReadTaskDuration());
+    cout << "______________________________________________\n";
+    cout << "Total second = " << TotalSeconds << endl;
+    cout << "______________________________________________\n\n\n\n";
+    return 0;
+}
