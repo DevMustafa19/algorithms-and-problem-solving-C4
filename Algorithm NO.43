@@ -1,0 +1,63 @@
+Algorithm NO.43
+
+
+struct strTaskDuration
+{
+    unsigned long long NumOfMonths, NumOfDays, NumOfHours, NumOfMinutes, NumOfSeconds;
+};
+
+int ReadPositiveNum(string Message)
+{
+    unsigned long long int Num = 0;
+    do
+    {
+        cout << Message;
+        cin >> Num;
+    } while (Num <= 0);
+    return Num;
+}
+
+strTaskDuration ConvertFromSeconds(unsigned long long int TotalSeconds)
+{
+    strTaskDuration TaskDuration;
+
+    const unsigned long long SecondsPerMonth = 30 * 24 * 60 * 60;
+    const unsigned long long SecondsPerDay = 24 * 60 * 60;
+    const unsigned long long SecondsPerHour = 60 * 60;
+    const unsigned long long SecondsPerMinutes = 60;
+
+    int Remainder = 0;
+
+    TaskDuration.NumOfMonths = floor(TotalSeconds / SecondsPerMonth);
+    Remainder = TotalSeconds % SecondsPerMonth;
+
+    TaskDuration.NumOfDays = floor(Remainder / SecondsPerDay);
+    Remainder = Remainder % SecondsPerDay;
+
+    TaskDuration.NumOfHours = floor(Remainder / SecondsPerHour);
+    Remainder = Remainder % SecondsPerHour;
+
+    TaskDuration.NumOfMinutes = floor(Remainder / SecondsPerMinutes);
+    Remainder = Remainder % SecondsPerMinutes;
+
+    TaskDuration.NumOfSeconds = Remainder;
+
+    return TaskDuration;
+}
+
+void PrintResultAfterConvertFromSeconds(strTaskDuration TaskDuration)
+{
+    cout
+        << TaskDuration.NumOfMonths << " Months.\n"
+        << TaskDuration.NumOfDays <<   " Days.\n"
+        << TaskDuration.NumOfHours <<  " Hours.\n"
+        << TaskDuration.NumOfMinutes << " Minutes.\n"
+        << TaskDuration.NumOfSeconds << " Seconds.\n\n\n\n";
+}
+
+int main()
+{
+    unsigned long long int TotalSeconds = ReadPositiveNum("Pls enter total second : ");
+    PrintResultAfterConvertFromSeconds(ConvertFromSeconds(TotalSeconds));
+    return 0;
+}
